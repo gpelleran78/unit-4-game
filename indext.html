@@ -8,7 +8,10 @@
     <title>StarWarsRPG</title>
     <link rel="stylesheet" type="text/css" href="assets/CSS/reset.css">
     <link rel="stylesheet" type="text/css" href="assets/CSS/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="assets/javascript/game.js"></script>
+
 </head>
 
 <body>
@@ -21,8 +24,9 @@
         </div>
 
         <!--selected character section-->
-        <div id="selected character-section">
-            <div class="Section-title">Your Character</div>
+        <div id="characters-section">
+            <div class="section-title">Your Character</div>
+            <div class="selected-character"></div>
         </div>
 
         <!--where character will appear-->
@@ -35,7 +39,7 @@
 
         <div class="section-title">Fight Section</div>
         <div id="fight-section">
-            <div id="attack-button">Attack</div>
+            <button id="attack-button">Attack</button>
         </div>
 
 

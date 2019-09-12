@@ -1,7 +1,16 @@
 .main-section-title{
    font-size: 300%;
    text-align: center;
+   color: aliceblue;
 }
 .section-title{
     font-size: 200%;
+    color: aliceblue;
+}
+body{
+    background-image: url(../images/battlefront-ii.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: auto;
 }
