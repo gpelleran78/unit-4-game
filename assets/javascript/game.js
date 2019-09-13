@@ -14,14 +14,17 @@ $(document).ready(function () {
             imageUrl: "assets/images/ig-88.jpg",
             enemyAttackBack: 10,
         }
+    };
 
-    }
     console.log(characters);
+
+
     //gives the ability to render character card to page
-    var renderOne = function (character, renderArena) {
-        var charDiv = $("div class='character' data-name='" + character.name + "'");
+    var renderOne = function (character, renderArea) {
+        var charDiv = $("<div class='character' data-name='" + character.name + "'>");
         var charName = $("<div class= 'character-name'>").text(character.name);
-        var charImg = $("<img alt= 'image' class='character-image'>").alter("src", character.imageUrl);
+        var charImage = $("<img alt= 'image' class='character-image'>").attr("src", character.imageUrl);
+        var charHealth = $("<div class= 'character-health'>").text(character.health);
         charDiv.append(charName).append(charImage).append(charHealth);
         $(renderArea).append(charDiv);
     }
@@ -41,6 +44,9 @@ $(document).ready(function () {
             }
         }
     }
+
+    //render characters to page at the start of the game
+    renderCharacters(characters, "#characters-section")
 
 });
 

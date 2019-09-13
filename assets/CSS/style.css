@@ -14,3 +14,12 @@ body{
     background-attachment: fixed;
     background-size: auto;
 }
+
+.character{
+    display: inline-block;
+    border-style: solid;
+    border-color: green;
+    border-width: 3px;
+    cursor: pointer;
+    background-color: white;
+}
