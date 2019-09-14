@@ -37,5 +37,11 @@ img{
     margin-left: 3px;
 }
 
+#game-message{
+    font-size: 150%;
+    text-align: left;
+    color: aliceblue;
+}
+
 .character-name {text-align: center;}
 .character-health {text-align: center;}

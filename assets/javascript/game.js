@@ -99,7 +99,7 @@ $(document).ready(function () {
             }
         }
 
-        //"selected-character" this div where the image will appear
+        //"selected-character" this div where the image will appear-----------------------------------------------------
         //if equal to true player select will apear to this area
         if (areaRender === "#selected-character") {
             renderOne(charObj, areaRender, "");
@@ -118,7 +118,7 @@ $(document).ready(function () {
             $(document).on("click", ".enemy", function () {
                 var name = ($(this).attr("data-name"));
 
-                // if no aggressor is selected, then selected player will be the agressor
+                // if no aggressor is selected, then selected player will be the agressor-----------------------------------
                 if ($("#defender").children().length === 0) {
                     renderCharacters(name, "#defender");
                     $(this).hide();
@@ -186,7 +186,7 @@ $(document).ready(function () {
         // no selected player
         if (!currSelectedCharacter) {
 
-            //populate currSelectedCharacter with selected players information
+            //populate currSelectedCharacter with selected players information+++++++++++problem rendering your character
             currSelectedCharacter = characters[name];
 
             // looping throught remaining characters
@@ -214,9 +214,9 @@ $(document).ready(function () {
 
         if ($("#defender").children().length !== 0) {
 
-            // creates prompt for attack and counter-attack++++++++++++++
-            var attackMessage = " You attacked " + currDefender.name + " for " + (currSelectedCharacter.attack * turnCounter) + " damage. ";
-            var counterAttackMessage = currDefender.name * " attacked you back for " + currDefender.enemyAttackBack + " damage. ";
+            // creates prompt for attack and counter-attack++++++++++++++ need to change font color of this outputed message+++
+            var attackMessage = " You attacked " + currDefender.name + " for " + (currSelectedCharacter.attack * turnCounter) + " Damage. ";
+            var counterAttackMessage = currDefender.name + " Attacked you back for " + currDefender.enemyAttackBack + " Damage. ";
             renderMessage("clearMessage");
 
 
