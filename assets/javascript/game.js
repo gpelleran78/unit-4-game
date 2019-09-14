@@ -67,7 +67,7 @@ $(document).ready(function () {
         }
     };
 
-    // function to handle game messages++++need to target and turn text to white
+    // function to handle game messages
 
     var renderMessage = function (message) {
 
@@ -214,7 +214,7 @@ $(document).ready(function () {
 
         if ($("#defender").children().length !== 0) {
 
-            // creates prompt for attack and counter-attack++++++++++++++ need to change font color of this outputed message+++
+            // creates prompt for attack and counter-attack
             var attackMessage = " You attacked " + currDefender.name + " for " + (currSelectedCharacter.attack * turnCounter) + " Damage. ";
             var counterAttackMessage = currDefender.name + " Attacked you back for " + currDefender.enemyAttackBack + " Damage. ";
             renderMessage("clearMessage");
@@ -238,7 +238,7 @@ $(document).ready(function () {
                 renderCharacters(currSelectedCharacter, "enemyDamage");
 
 
-                if (currSelectedCharacter.health <= 0){
+                if (currSelectedCharacter.health <= 0) {
                     renderMessage("clearMessage");
                     restartGame("You have been defeated!! :(.... GAME OVER LOSER!!!!!!");
                     $("attack-button").unbind("click");
