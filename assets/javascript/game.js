@@ -225,7 +225,7 @@ $(document).ready(function () {
 
             // checks to see if aggressor still has health left to fight
             if (currDefender.health > 0) {
-                renderCharacters(currDefender, "playerDamage");
+                renderCharacters(currDefender, "#playerDamage");
 
                 //Combat Message
                 renderMessage(attackMessage);
@@ -235,7 +235,7 @@ $(document).ready(function () {
                 currSelectedCharacter.health -= currDefender.enemyAttackBack;
 
                 //PEBCAK's health will be re-renered by the aggressors attack value
-                renderCharacters(currSelectedCharacter, "enemyDamage");
+                renderCharacters(currSelectedCharacter, "#enemyDamage");
 
 
                 if (currSelectedCharacter.health <= 0) {
@@ -249,13 +249,13 @@ $(document).ready(function () {
             // if the aggressor has less than zero health will equal a defeat
             else {
                 //remove aggressors player card
-                renderCharacters(currDefender, "enemyDefeated");
+                renderCharacters(currDefender, "#enemyDefeated");
                 //kill count increment
                 killCount++;
                 //restart Game
                 if (killCount >= 3) {
-                    renderMessage("clear Message");
-                    renderGame("You Won!!!!!!:) GAME OVER!!!")
+                    renderMessage("clear Message");//+++++++++++++++++fix
+                    renderGame("You Won!!!!!!:) GAME OVER!!!");
 
                 }
             }
