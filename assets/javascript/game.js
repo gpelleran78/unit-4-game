@@ -72,12 +72,12 @@ $(document).ready(function () {
         //if equal to true player select will apear to this area
         if (areaRender === "#selected-character") {
             renderOne(charObj, areaRender);
-
-
         }
+
+
         //"available-to-attack", is the div, where the charaters not in play will be stored
         // if true, render the selected player to this area.
-        if (areaRender === "#available-to-attack") {
+        if (areaRender === "#available-to-attack-section") {
             // this loop will go throught the combantants arrey and call the renderOne function
             for (var i = 0; i < charObj.length; i++) {
                 renderOne(charObj[i], areaRender);
@@ -122,7 +122,7 @@ $(document).ready(function () {
 
 
 
-    })
+    });
 
 });
 
