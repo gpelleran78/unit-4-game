@@ -12,7 +12,7 @@ body{
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    background-size: auto;
+    background-size: cover;
 }
 
 .character{
@@ -23,3 +23,19 @@ body{
     cursor: pointer;
     background-color: white;
 }
+
+img{
+    height: 100px;
+    width: 150px;
+    border-radius: 10px;
+}
+
+.character-image{
+    padding-right: 16px;
+    padding-left: 16px;
+    margin-top: 3px;
+    margin-left: 3px;
+}
+
+.character-name {text-align: center;}
+.character-health {text-align: center;}
