@@ -146,7 +146,7 @@ $(document).ready(function () {
         //re-render PEBCAK's character when attacked
         if (areaRender === "enemyDamage") {
             $("#selected-character").empty();
-            renderOne(charObj, "selected-character", "");
+            renderOne(charObj, "#selected-character", "selected-character");
         }
 
         // remove aggressor
@@ -215,8 +215,8 @@ $(document).ready(function () {
         if ($("#defender").children().length !== 0) {
 
             // creates prompt for attack and counter-attack
-            var attackMessage = " You attacked " + currDefender.name + " for " + (currSelectedCharacter.attack * turnCounter) + " Damage. ";
-            var counterAttackMessage = currDefender.name + " Attacked you back for " + currDefender.enemyAttackBack + " Damage. ";
+            var attackMessage = currSelectedCharacter.name + " Attacked " + currDefender.name + " for " + (currSelectedCharacter.attack * turnCounter) + " Damage. ";
+            var counterAttackMessage = currDefender.name + " Attacked " + currSelectedCharacter.name + " for " + (currDefender.enemyAttackBack * turnCounter) + " Damage. ";
             renderMessage("clearMessage");
 
 
@@ -225,17 +225,19 @@ $(document).ready(function () {
 
             // checks to see if aggressor still has health left to fight
             if (currDefender.health > 0) {
-                renderCharacters(currDefender, "#playerDamage");
+                renderCharacters(currDefender, "playerDamage");
 
                 //Combat Message
                 renderMessage(attackMessage);
                 renderMessage(counterAttackMessage);
 
                 // Render the PEBCAK's and update the characters card 
-                currSelectedCharacter.health -= currDefender.enemyAttackBack;
+                currSelectedCharacter.health -= (currDefender.enemyAttackBack * turnCounter);
+                // currDefender.health -= currSelectedCharacter.attack;
+
 
                 //PEBCAK's health will be re-renered by the aggressors attack value
-                renderCharacters(currSelectedCharacter, "#enemyDamage");
+                renderCharacters(currSelectedCharacter, "enemyDamage");
 
 
                 if (currSelectedCharacter.health <= 0) {
