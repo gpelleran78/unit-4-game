@@ -67,7 +67,7 @@ $(document).ready(function () {
         }
     };
 
-    // function to handle game messages
+    // function to handle game messages++++need to target and turn text to white
 
     var renderMessage = function (message) {
 
@@ -143,7 +143,7 @@ $(document).ready(function () {
             $("#defender").empty();
             renderOne(charObj, "#defender", "defender");
         }
-        //re-render PEBKAC's character when attacked
+        //re-render PEBCAK's character when attacked
         if (areaRender === "enemyDamage") {
             $("#selected-character").empty();
             renderOne(charObj, "selected-character", "");
@@ -152,7 +152,7 @@ $(document).ready(function () {
         // remove aggressor
         if (areaRender === "enemyDefeated") {
             $("#defender.").empty();
-            var gameStateMessage = ("You have defeated " + charObj.name + "Please select another aggressor.");
+            var gameStateMessage = ("You have defeated " + charObj.name + " Please select another aggressor.");
             renderMessage(gameStateMessage);
         }
     };
@@ -214,8 +214,8 @@ $(document).ready(function () {
 
         if ($("#defender").children().length !== 0) {
 
-            // creates promt for attack and counter-attack
-            var attackMessage = "You attacked " + currDefender.name + " for " + (currSelectedCharacter.attack * turnCounter) + " damage. ";
+            // creates prompt for attack and counter-attack++++++++++++++
+            var attackMessage = " You attacked " + currDefender.name + " for " + (currSelectedCharacter.attack * turnCounter) + " damage. ";
             var counterAttackMessage = currDefender.name * " attacked you back for " + currDefender.enemyAttackBack + " damage. ";
             renderMessage("clearMessage");
 
@@ -231,10 +231,10 @@ $(document).ready(function () {
                 renderMessage(attackMessage);
                 renderMessage(counterAttackMessage);
 
-                // Render the PEBKAC's  and update the characters card 
+                // Render the PEBCAK's and update the characters card 
                 currSelectedCharacter.health -= currDefender.enemyAttackBack;
 
-                //PEBKAC's health will be re-renered by the aggressors attack value
+                //PEBCAK's health will be re-renered by the aggressors attack value
                 renderCharacters(currSelectedCharacter, "enemyDamage");
 
 
